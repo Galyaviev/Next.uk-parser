@@ -36,7 +36,7 @@ def start():
         try:
             print('Запускаю Браузер')
             options = Options()
-            options.headless = False
+            options.headless = True
             browser = Firefox(options=options)
             browser.delete_all_cookies()
             browser.set_window_position(0, 0)
@@ -65,7 +65,7 @@ def start():
                 proxy_port = int(proxy_list['port'])
                 print(proxy_host, proxy_port)
                 options = Options()
-                options.headless = False
+                options.headless = True
                 fp = webdriver.FirefoxProfile()
                 fp.set_preference("browser.privatebrowsing.autostart", True)
                 fp.set_preference("network.proxy.type", 1)
